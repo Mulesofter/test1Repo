@@ -29,23 +29,25 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				<configuration>
-					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.8.0</muleVersion>
-						<username></username>
-						<password></password>
-						<businessGroup>Warriors</businessGroup>
-						<applicationName>cicd-new-2144</applicationName>
-						<environment>UAT</environment>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
-						<properties>
-							<key>value</key>
-						</properties>
-					</cloudHubDeployment>
-					<classifier>mule-application</classifier>
-				</configuration>
+
+
+
+
+<configuration>
+                    <classifier>mule-application</classifier>
+                    <cloudhub2Deployment>
+                        <uri>https://anypoint.mulesoft.com</uri>
+                        <provider>MC</provider>
+                        <environment>Sandbox</environment>
+                        <target>Cloudhub-US-West-2</target>
+                        <muleVersion>4.4.0</muleVersion>
+                        <!-- This is only needed if you want to use your credentials stored in your Maven settings.xml file. This is not the Mule server name. -->
+                        <server>Repository</server>
+                        <applicationName>${appName}</applicationName>
+                        <replicas>1</replicas>
+                        <vCores>0.1</vCores>
+                    </cloudhub2Deployment>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
