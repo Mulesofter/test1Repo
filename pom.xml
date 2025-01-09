@@ -35,8 +35,8 @@
                         <uri>https://anypoint.mulesoft.com</uri>
                         <provider>MC</provider>
                         <environment>Sandbox</environment>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
+						<replicas>1</replicas>
+						
 			    <username>Peacelover79</username>
 						<password>Malak2013#</password>
                         <target>Cloudhub-US-West-2</target>
