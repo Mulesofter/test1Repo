@@ -39,7 +39,7 @@
 						
 			    <username>Peacelover79</username>
 						<password>Malak2013#</password>
-                        <target>Cloudhub-US-West-2</target>
+                        <target>Cloudhub-US-East-2</target>
                         <muleVersion>4.8.0</muleVersion>
                         <!-- This is only needed if you want to use your credentials stored in your Maven settings.xml file. This is not the Mule server name. -->
                         <applicationName>simplegithubtest1</applicationName>
