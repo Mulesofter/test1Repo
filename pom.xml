@@ -4,10 +4,10 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>cicd-4421</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>simpleGitHubTest</name>
+	<name>cicd-4421</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,7 +42,7 @@
                         <target>Cloudhub-US-East-2</target>
                         <muleVersion>4.8.0</muleVersion>
                         <!-- This is only needed if you want to use your credentials stored in your Maven settings.xml file. This is not the Mule server name. -->
-                        <applicationName>simplegithubtest1</applicationName>
+                        <applicationName>cicd-4421</applicationName>
                         <replicas>1</replicas>
                         <vCores>0.1</vCores>
                     </cloudhub2Deployment>
