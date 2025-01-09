@@ -37,8 +37,8 @@
                         <environment>Sandbox</environment>
 						<replicas>1</replicas>
 						
-			    <username>Peacelover79</username>
-						<password>Malak2013#</password>
+			    <username>Jassim</username>
+						<password>Hend1986#</password>
                         <target>Cloudhub-US-East-2</target>
                         <muleVersion>4.8.0</muleVersion>
                         <!-- This is only needed if you want to use your credentials stored in your Maven settings.xml file. This is not the Mule server name. -->
