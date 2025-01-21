@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="38e12887-a87c-4bb7-8b4b-30bc8ef87a40" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="choice-routerFlow" doc:id="f1e0f188-aecd-4020-9c30-56dfdc2fde9f" >
+		<http:listener doc:name="Listener" doc:id="290c52ec-02c0-4896-9051-b246c142832a" config-ref="HTTP_Listener_config" path="/choice"/>
+		<logger level="INFO" doc:name="Logger" doc:id="a31f062f-53bc-4076-8587-f063e1bfb688" message="#[payload]"/>
+		<foreach doc:name="For Each" doc:id="000cbc84-5306-442b-b8ad-9809d7d1ef51" >
+			<choice doc:name="Choice" doc:id="5bc971d8-df2a-4375-a662-2043b5314b00">
+			<when expression='#[payload.id == "1"]'>
+				<logger level="INFO" doc:name="Logger" doc:id="5c0f946f-397f-498f-872d-59118e2cd66b" message="#[payload]" />
+					<ee:transform doc:name="Transform Message" doc:id="d130a5ce-4438-4a8b-973f-2797b733cabc" >
+						<ee:message >
+							<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+						</ee:message>
+					</ee:transform>
+			</when>
+			<when expression='#[payload.id == "3"]'>
+				<logger level="INFO" doc:name="Logger" doc:id="6924edca-def4-43a4-bbb1-49f780bb4b37" />
+					<ee:transform doc:name="Transform Message" doc:id="56ae7844-b7a9-4f56-831f-d9ccc5ccaa27" >
+						<ee:message >
+							<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+						</ee:message>
+					</ee:transform>
+			</when>
+			<when expression='#[payload.id == "2"]'>
+				<logger level="INFO" doc:name="Logger" doc:id="02e87cef-113d-4f7a-b723-34a0e09ddaaa" />
+					<ee:transform doc:name="Transform Message" doc:id="a7c03784-1b33-47f0-b43c-525759d40124" >
+						<ee:message >
+							<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+						</ee:message>
+					</ee:transform>
+			</when>
+			<otherwise>
+				<logger level="INFO" doc:name="Logger" doc:id="4be55d8c-f526-4901-abbb-c5cb047aafe0" />
+					<ee:transform doc:name="Transform Message" doc:id="492966bf-9dff-4c3b-8201-4734b0e057e9" >
+						<ee:message >
+							<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+						</ee:message>
+					</ee:transform>
+			</otherwise>
+		</choice>
+		</foreach>
+	</flow>
+</mule>

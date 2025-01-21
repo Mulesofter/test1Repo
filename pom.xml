@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>cicd-4421</artifactId>
-	<version>1.0.0</version>
+	<artifactId>choice-router</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>cicd-4421</name>
+	<name>choice-router</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,24 +29,6 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-<configuration>
-                    <classifier>mule-application</classifier>
-                    <cloudhub2Deployment>
-                        <uri>https://anypoint.mulesoft.com</uri>
-                        <provider>MC</provider>
-                        <environment>Sandbox</environment>
-						<replicas>1</replicas>
-						
-			    <username>Jassim</username>
-						<password>Hend1986#</password>
-                        <target>Cloudhub-US-East-2</target>
-                        <muleVersion>4.8.0</muleVersion>
-                        <!-- This is only needed if you want to use your credentials stored in your Maven settings.xml file. This is not the Mule server name. -->
-                        <applicationName>cicd-4421</applicationName>
-                        <replicas>1</replicas>
-                        <vCores>0.1</vCores>
-                    </cloudhub2Deployment>
-                </configuration>
 			</plugin>
 		</plugins>
 	</build>
